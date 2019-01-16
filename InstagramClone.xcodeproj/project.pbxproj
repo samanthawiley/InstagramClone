@@ -12,6 +12,11 @@
 		F0298F4F21E8084400BAD070 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0298F4D21E8084400BAD070 /* LaunchScreen.storyboard */; };
 		F0298F5721E80E6E00BAD070 /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0298F5621E80E6E00BAD070 /* Start.storyboard */; };
 		F0298F5921E8105C00BAD070 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0298F5821E8105C00BAD070 /* SignInViewController.swift */; };
+		F063088721EFDC0D00B4A68B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F063088621EFDC0D00B4A68B /* HomeViewController.swift */; };
+		F063088921EFDC4800B4A68B /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F063088821EFDC4800B4A68B /* DiscoverViewController.swift */; };
+		F063088B21EFDC7900B4A68B /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F063088A21EFDC7900B4A68B /* CameraViewController.swift */; };
+		F063088D21EFDC9000B4A68B /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F063088C21EFDC9000B4A68B /* ActivityViewController.swift */; };
+		F063088F21EFDC9A00B4A68B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F063088E21EFDC9A00B4A68B /* ProfileViewController.swift */; };
 		F0F66EBA21E81A5D00AD8481 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F66EB921E81A5D00AD8481 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +28,11 @@
 		F0298F5021E8084400BAD070 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0298F5621E80E6E00BAD070 /* Start.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Start.storyboard; sourceTree = "<group>"; };
 		F0298F5821E8105C00BAD070 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		F063088621EFDC0D00B4A68B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F063088821EFDC4800B4A68B /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
+		F063088A21EFDC7900B4A68B /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		F063088C21EFDC9000B4A68B /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		F063088E21EFDC9A00B4A68B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F0F66EB921E81A5D00AD8481 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,6 +68,11 @@
 			children = (
 				F0298F4421E8084400BAD070 /* AppDelegate.swift */,
 				F0F66EB921E81A5D00AD8481 /* SignUpViewController.swift */,
+				F063088621EFDC0D00B4A68B /* HomeViewController.swift */,
+				F063088821EFDC4800B4A68B /* DiscoverViewController.swift */,
+				F063088A21EFDC7900B4A68B /* CameraViewController.swift */,
+				F063088C21EFDC9000B4A68B /* ActivityViewController.swift */,
+				F063088E21EFDC9A00B4A68B /* ProfileViewController.swift */,
 				F0298F5821E8105C00BAD070 /* SignInViewController.swift */,
 				F0298F5621E80E6E00BAD070 /* Start.storyboard */,
 				F0298F4B21E8084400BAD070 /* Assets.xcassets */,
@@ -142,6 +157,11 @@
 				F0F66EBA21E81A5D00AD8481 /* SignUpViewController.swift in Sources */,
 				F0298F5921E8105C00BAD070 /* SignInViewController.swift in Sources */,
 				F0298F4521E8084400BAD070 /* AppDelegate.swift in Sources */,
+				F063088721EFDC0D00B4A68B /* HomeViewController.swift in Sources */,
+				F063088D21EFDC9000B4A68B /* ActivityViewController.swift in Sources */,
+				F063088921EFDC4800B4A68B /* DiscoverViewController.swift in Sources */,
+				F063088F21EFDC9A00B4A68B /* ProfileViewController.swift in Sources */,
+				F063088B21EFDC7900B4A68B /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
