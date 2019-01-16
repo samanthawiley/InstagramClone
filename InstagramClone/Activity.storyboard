@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Activity-->
+        <scene sceneID="LGB-x8-Nph">
+            <objects>
+                <viewController id="Dsh-kC-FoW" customClass="ActivityViewController" customModule="InstagramClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CjJ-7H-KPd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="CVQ-uG-BGN"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Activity" id="Q4o-Ex-MKt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U7b-gP-4u5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3412" y="448"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="AN2-IZ-DEQ">
+            <objects>
+                <navigationController storyboardIdentifier="NavigationActivity" automaticallyAdjustsScrollViewInsets="NO" id="8sb-Av-stt" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="hearticonlight" selectedImage="hearticondark" id="ILu-GO-gCu">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="369-n1-Kkg">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Dsh-kC-FoW" kind="relationship" relationship="rootViewController" id="rxI-Le-wfX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sfs-Ck-2KG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3412" y="-277"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="hearticondark" width="36" height="26"/>
+        <image name="hearticonlight" width="38" height="26"/>
+    </resources>
+</document>
