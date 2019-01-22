@@ -23,6 +23,7 @@
 		F063089721EFE9B300B4A68B /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F063089621EFE9B300B4A68B /* Camera.storyboard */; };
 		F063089921EFE9E300B4A68B /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F063089821EFE9E300B4A68B /* Activity.storyboard */; };
 		F063089B21EFEA0900B4A68B /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F063089A21EFEA0900B4A68B /* Profile.storyboard */; };
+		F0EA854F21F7E3BA00495A76 /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = F0EA854E21F7E3B900495A76 /* GoogleService-Info (1).plist */; };
 		F0F66EBA21E81A5D00AD8481 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F66EB921E81A5D00AD8481 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		F063089621EFE9B300B4A68B /* Camera.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Camera.storyboard; sourceTree = "<group>"; };
 		F063089821EFE9E300B4A68B /* Activity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Activity.storyboard; sourceTree = "<group>"; };
 		F063089A21EFEA0900B4A68B /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		F0EA854E21F7E3B900495A76 /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (1).plist"; sourceTree = "<group>"; };
 		F0F66EB921E81A5D00AD8481 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,13 +81,19 @@
 			isa = PBXGroup;
 			children = (
 				F0298F4421E8084400BAD070 /* AppDelegate.swift */,
-				F0F66EB921E81A5D00AD8481 /* SignUpViewController.swift */,
-				F063088621EFDC0D00B4A68B /* HomeViewController.swift */,
-				F063088821EFDC4800B4A68B /* DiscoverViewController.swift */,
-				F063088A21EFDC7900B4A68B /* CameraViewController.swift */,
-				F063088C21EFDC9000B4A68B /* ActivityViewController.swift */,
-				F063088E21EFDC9A00B4A68B /* ProfileViewController.swift */,
-				F0298F5821E8105C00BAD070 /* SignInViewController.swift */,
+				F063089D21F7DE0200B4A68B /* ViewControllers */,
+				F063089C21F7DDDF00B4A68B /* Storyboards */,
+				F0298F4B21E8084400BAD070 /* Assets.xcassets */,
+				F0298F4D21E8084400BAD070 /* LaunchScreen.storyboard */,
+				F0298F5021E8084400BAD070 /* Info.plist */,
+				F0EA854E21F7E3B900495A76 /* GoogleService-Info (1).plist */,
+			);
+			path = InstagramClone;
+			sourceTree = "<group>";
+		};
+		F063089C21F7DDDF00B4A68B /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
 				F0298F5621E80E6E00BAD070 /* Start.storyboard */,
 				F063089021EFE5F800B4A68B /* Main.storyboard */,
 				F063089A21EFEA0900B4A68B /* Profile.storyboard */,
@@ -93,11 +101,22 @@
 				F063089621EFE9B300B4A68B /* Camera.storyboard */,
 				F063089421EFE97A00B4A68B /* Discover.storyboard */,
 				F063089221EFE81800B4A68B /* Home.storyboard */,
-				F0298F4B21E8084400BAD070 /* Assets.xcassets */,
-				F0298F4D21E8084400BAD070 /* LaunchScreen.storyboard */,
-				F0298F5021E8084400BAD070 /* Info.plist */,
 			);
-			path = InstagramClone;
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		F063089D21F7DE0200B4A68B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F0F66EB921E81A5D00AD8481 /* SignUpViewController.swift */,
+				F063088621EFDC0D00B4A68B /* HomeViewController.swift */,
+				F063088821EFDC4800B4A68B /* DiscoverViewController.swift */,
+				F063088A21EFDC7900B4A68B /* CameraViewController.swift */,
+				F063088C21EFDC9000B4A68B /* ActivityViewController.swift */,
+				F063088E21EFDC9A00B4A68B /* ProfileViewController.swift */,
+				F0298F5821E8105C00BAD070 /* SignInViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +185,7 @@
 				F0298F5721E80E6E00BAD070 /* Start.storyboard in Resources */,
 				F063089121EFE5F800B4A68B /* Main.storyboard in Resources */,
 				F063089B21EFEA0900B4A68B /* Profile.storyboard in Resources */,
+				F0EA854F21F7E3BA00495A76 /* GoogleService-Info (1).plist in Resources */,
 				F063089521EFE97A00B4A68B /* Discover.storyboard in Resources */,
 				F063089921EFE9E300B4A68B /* Activity.storyboard in Resources */,
 			);
