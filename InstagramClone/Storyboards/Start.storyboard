@@ -149,7 +149,7 @@
                                             <color key="titleColor" white="1" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="lzu-t2-06q" kind="presentation" id="Ruf-jh-WiE"/>
+                                            <action selector="signUpBtn_TouchUpInside:" destination="HGY-gz-Ouj" eventType="touchUpInside" id="dqK-WS-rh1"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -211,7 +211,4 @@
     <resources>
         <image name="defaultprofilepic" width="225" height="225"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Ruf-jh-WiE"/>
-    </inferredMetricsTieBreakers>
 </document>
