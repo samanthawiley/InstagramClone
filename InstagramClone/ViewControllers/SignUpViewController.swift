@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseStorage
 
 class SignUpViewController: UIViewController {
 
@@ -16,6 +17,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var profileImage: UIImageView!
+    
+    var selectedImage: UIImage?
     
     @IBAction func dismissOnClick(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -57,23 +60,71 @@ class SignUpViewController: UIViewController {
         profileImage.layer.cornerRadius = 45
         profileImage.clipsToBounds = true
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.handleSelectProfileImageView))
+        profileImage.addGestureRecognizer(tapGesture)
+        profileImage.isUserInteractionEnabled = true
+        
         // Do any additional setup after loading the view.
     }
+    
+    @objc func handleSelectProfileImageView() {
+        let pickerController = UIImagePickerController()
+        pickerController.delegate = self
+        present(pickerController, animated: true, completion: nil)
+    }
+    
     @IBAction func signUpBtn_TouchUpInside(_ sender: Any) {
         Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user: AuthDataResult?, error: Error?) in
             if error != nil {
                 print(error!.localizedDescription)
                 return
             }
-            let ref = Database.database().reference()
-            
-            let userReference = ref.child("users")
             let uid = user?.user.uid
-            let newUserReference = userReference.child(uid!)
-            newUserReference.setValue(["username": self.usernameTextField.text!, "email": self.emailTextField.text!])
+            let storageRef = Storage.storage().reference(forURL: "gs://instagramclone-ec2f4.appspot.com").child("profile_image").child(uid!)
+            if let profileImg = self.selectedImage, let imageData = UIImageJPEGRepresentation(profileImg, 0.1) {
+                storageRef.putData(imageData, metadata: nil, completion: {(metadata, error) in
+                    if error != nil {
+                        print("1. There was an error!!")
+                        return
+                    }
+                    storageRef.downloadURL(completion: { (url, error) in
+                        if error != nil {
+                            print("2. There was an error!!")
+                            return
+                        }
+                        let profileImageUrl = url?.absoluteString
+                        
+                        let ref = Database.database().reference()
+                        let userReference = ref.child("users")
+                        let newUserReference = userReference.child(uid!)
+                        newUserReference.setValue(["username": self.usernameTextField.text!, "email": self.emailTextField.text!, "profileImageUrl": profileImageUrl])
+                    })
+                
+                })
+                
+            }
             
-            print("description: \(newUserReference.description())")
         })
     }
     
 }
+
+extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        print("did Finish Picking Media")
+        if let image = info["UIImagePickerControllerOriginalImage"] as? UIImage {
+            selectedImage = image
+            profileImage.image = image
+        }
+        print(info)
+
+        dismiss(animated: true, completion: nil)
+    }
+}
+
+
+
+
+
+
+
