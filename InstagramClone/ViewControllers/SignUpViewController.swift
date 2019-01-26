@@ -101,12 +101,10 @@ class SignUpViewController: UIViewController {
             if let profileImg = self.selectedImage, let imageData = UIImageJPEGRepresentation(profileImg, 0.1) {
                 storageRef.putData(imageData, metadata: nil, completion: {(metadata, error) in
                     if error != nil {
-                        print("1. There was an error!!")
                         return
                     }
                     storageRef.downloadURL(completion: { (url, error) in
                         if error != nil {
-                            print("2. There was an error!!")
                             return
                         }
                         let profileImageUrl = url?.absoluteString
@@ -126,6 +124,8 @@ class SignUpViewController: UIViewController {
         let userReference = ref.child("users")
         let newUserReference = userReference.child(uid)
         newUserReference.setValue(["username": username, "email": email, "profileImageUrl": profileImageUrl])
+        
+         self.performSegue(withIdentifier: "SignUpToTabBarVC", sender: nil)
     }
     
 }

@@ -54,7 +54,7 @@
                                             <color key="titleColor" white="1" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="lzu-t2-06q" kind="presentation" id="xvM-mg-ugk"/>
+                                            <action selector="signInButton_TouchUpInside:" destination="Zy0-ce-Vr3" eventType="touchUpInside" id="yBA-0X-1Po"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -93,8 +93,11 @@
                         <viewLayoutGuide key="safeArea" id="VbJ-fX-U9R"/>
                     </view>
                     <connections>
+                        <outlet property="SignInButton" destination="OAL-FV-Dma" id="j1q-EK-7hC"/>
                         <outlet property="emailTextField" destination="C21-33-gum" id="prY-ts-Btv"/>
                         <outlet property="passwordTextField" destination="Odd-n9-6u4" id="6ub-0i-492"/>
+                        <outlet property="signInButton" destination="OAL-FV-Dma" id="ZIo-J9-4fr"/>
+                        <segue destination="lzu-t2-06q" kind="presentation" identifier="SignInToTabBarVC" id="iwB-Lu-vCE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnF-M4-k6n" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -194,6 +197,7 @@
                         <outlet property="profileImage" destination="auU-dL-pSH" id="2Oy-dY-8FF"/>
                         <outlet property="signUpButton" destination="tHA-Aw-sMe" id="AXf-qY-5yT"/>
                         <outlet property="usernameTextField" destination="0SI-ed-DC5" id="nsg-g4-Tzl"/>
+                        <segue destination="lzu-t2-06q" kind="presentation" identifier="SignUpToTabBarVC" id="ahu-to-Tb4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3pu-yf-CaU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -212,4 +216,7 @@
     <resources>
         <image name="defaultprofilepic" width="225" height="225"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ahu-to-Tb4"/>
+    </inferredMetricsTieBreakers>
 </document>

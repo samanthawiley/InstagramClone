@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SignInViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var signInButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +39,45 @@ class SignInViewController: UIViewController {
         
         passwordTextField.layer.addSublayer(bottomLayerPassword)
         
-        // Do any additional setup after loading the view.
+        handleTextField()
+        
     }
-
+    
+    func handleTextField() {
+        emailTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+        
+        passwordTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+    }
+    
+    @objc func textFieldDidChange() {
+        guard let email = emailTextField.text, !email.isEmpty, let password = passwordTextField.text, !password.isEmpty else {
+            signInButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
+            signInButton.isEnabled = false
+            return
+        }
+        
+        signInButton.setTitleColor(UIColor.white, for: UIControlState.normal)
+        signInButton.isEnabled = true
+    }
+    @IBAction func signInButton_TouchUpInside(_ sender: Any) {
+        Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user: AuthDataResult?, error: Error?) in
+            if error != nil {
+                print(error!.localizedDescription)
+                return
+            }
+            self.performSegue(withIdentifier: "SignInToTabBarVC", sender: nil)
+        })
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
