@@ -35,7 +35,6 @@ class SignUpViewController: UIViewController {
         let bottomLayerUsername = CALayer()
         bottomLayerUsername.frame = CGRect(x: 0, y: 29, width: 374, height: 0.6)
         bottomLayerUsername.backgroundColor = UIColor(red: 50/255, green: 50/255, blue: 25/255, alpha: 1).cgColor
-        
         usernameTextField.layer.addSublayer(bottomLayerUsername)
         
         emailTextField.backgroundColor = UIColor.clear
@@ -45,7 +44,6 @@ class SignUpViewController: UIViewController {
         let bottomLayerEmail = CALayer()
         bottomLayerEmail.frame = CGRect(x: 0, y: 29, width: 374, height: 0.6)
         bottomLayerEmail.backgroundColor = UIColor(red: 50/255, green: 50/255, blue: 25/255, alpha: 1).cgColor
-        
         emailTextField.layer.addSublayer(bottomLayerEmail)
         
         passwordTextField.backgroundColor = UIColor.clear
@@ -55,7 +53,6 @@ class SignUpViewController: UIViewController {
         let bottomLayerPassword = CALayer()
         bottomLayerPassword.frame = CGRect(x: 0, y: 29, width: 374, height: 0.6)
         bottomLayerPassword.backgroundColor = UIColor(red: 50/255, green: 50/255, blue: 25/255, alpha: 1).cgColor
-        
         passwordTextField.layer.addSublayer(bottomLayerPassword)
         
         profileImage.layer.cornerRadius = 45
@@ -66,7 +63,6 @@ class SignUpViewController: UIViewController {
         profileImage.isUserInteractionEnabled = true
         
         handleTextField()
-        // Do any additional setup after loading the view.
     }
     
     func handleTextField() {
@@ -115,10 +111,7 @@ class SignUpViewController: UIViewController {
                         }
                         let profileImageUrl = url?.absoluteString
                         
-                        let ref = Database.database().reference()
-                        let userReference = ref.child("users")
-                        let newUserReference = userReference.child(uid!)
-                        newUserReference.setValue(["username": self.usernameTextField.text!, "email": self.emailTextField.text!, "profileImageUrl": profileImageUrl])
+                        self.setUserInformation(profileImageUrl: profileImageUrl!, username: self.usernameTextField.text!, email: self.emailTextField.text!, uid: uid!)
                     })
                 
                 })
@@ -126,6 +119,13 @@ class SignUpViewController: UIViewController {
             }
             
         })
+    }
+    
+    func setUserInformation(profileImageUrl: String, username: String, email: String, uid: String) {
+        let ref = Database.database().reference()
+        let userReference = ref.child("users")
+        let newUserReference = userReference.child(uid)
+        newUserReference.setValue(["username": username, "email": email, "profileImageUrl": profileImageUrl])
     }
     
 }
