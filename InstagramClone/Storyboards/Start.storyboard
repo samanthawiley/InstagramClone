@@ -18,7 +18,7 @@
         <!--Sign In View Controller-->
         <scene sceneID="rm4-TT-ffC">
             <objects>
-                <viewController id="Zy0-ce-Vr3" customClass="SignInViewController" customModule="InstagramClone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInViewController" id="Zy0-ce-Vr3" customClass="SignInViewController" customModule="InstagramClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hSL-Rp-T1h">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -217,6 +217,6 @@
         <image name="defaultprofilepic" width="225" height="225"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ahu-to-Tb4"/>
+        <segue reference="iwB-Lu-vCE"/>
     </inferredMetricsTieBreakers>
 </document>
